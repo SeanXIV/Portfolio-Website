@@ -1,0 +1,24 @@
+.heading {
+    text-align: center;
+    font-family: 'Microsoft Sans Serif';
+    margin-bottom: 50px;
+  }
+  
+  .cards {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+  }
+  
+  .exp-card {
+    transition: all 0.3s ease;
+    background-color: whitesmoke;
+  }
+  
+  .exp-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #e8e8e8;
+  }
+  

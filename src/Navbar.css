@@ -1,0 +1,147 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.534);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .navbar.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 60px;
+  }
+  
+  .nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-logo a:hover {
+    color: yellowgreen;
+  }
+  
+  .nav-links-desktop {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .nav-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+  }
+  
+  .nav-link:hover {
+    color: yellowgreen;
+  }
+  
+  .contact-btn {
+    background-color: yellowgreen;
+    color: white !important;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .contact-btn:hover {
+    background-color: rgba(154, 205, 50, 0.9);
+    transform: translateY(-2px);
+  }
+  
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #333;
+  }
+  
+  .nav-links-mobile {
+    display: none;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .nav-links-desktop {
+      display: none;
+    }
+  
+    .mobile-menu-btn {
+      display: block;
+    }
+  
+    .nav-links-mobile {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.98);
+      padding: 1rem;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+      gap: 1rem;
+    }
+  
+    .nav-links-mobile.open {
+      transform: translateY(0);
+    }
+  
+    .navbar.scrolled .nav-links-mobile {
+      top: 60px;
+    }
+  }
+  
+  /* Add margin to main content to account for fixed navbar */
+  body {
+    padding-top: 70px;
+  }
+
+  /* Add these new styles to your existing Navbar.css */
+.nav-link.active {
+    color: yellowgreen;
+    font-weight: 600;
+    position: relative;
+  }
+  
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background-color: yellowgreen;
+    border-radius: 2px;
+  }
+  
+  .nav-link.contact-btn.active {
+    background-color: rgba(154, 205, 50, 0.9);
+  }
+  
+  .nav-link.contact-btn.active::after {
+    display: none;
+  }

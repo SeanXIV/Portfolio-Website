@@ -28,6 +28,17 @@
   color: #61dafb;
 }
 
+body {
+  background-image: url('./assets/images/back5.jpeg');
+  background-size: cover; /* Makes the image cover the entire screen */
+  background-position: center center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 170vh; /* Ensures the body takes the full height of the screen */
+  margin: 0;
+  font-family: Arial, sans-serif; /* Optional: set a font style */
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

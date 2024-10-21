@@ -1,0 +1,57 @@
+/* Container styling */
+.skills-container {
+  min-height: 100vh;
+  padding: 40px;
+  background: transparent; /* Transparent to let background image shine through */
+}
+
+/* Heading styling */
+.skills-heading {
+  font-family: 'Microsoft Sans Serif', sans-serif;
+  font-size: 2.5rem;
+  color: black; /* Black text for contrast with background */
+  margin-bottom: 40px;
+}
+
+/* Row styling */
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Skill paper styling with glassmorphism effect */
+.skill-paper {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black; /* Black text for contrast */
+  background: rgba(255, 255, 255, 0.2); /* White with opacity for transparency */
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(10px); /* Frosted glass blur effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for glass effect */
+}
+
+.skill-paper:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  background: rgba(255, 255, 255, 0.3); /* Slightly more opaque on hover */
+}
+
+/* Media Queries for better responsiveness */
+@media (max-width: 768px) {
+  .skill-paper {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .skills-heading {
+    font-size: 2rem;
+  }
+}

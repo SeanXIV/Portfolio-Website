@@ -1,0 +1,292 @@
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  background: linear-gradient(to bottom right, rgba(154, 205, 50, 0.1), rgba(154, 205, 50, 0.2));
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 4rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
+  padding-right: 2rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: rgba(154, 205, 50, 1);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  margin-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.hero-description {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.hero-image {
+  flex: 0 0 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  border: 4px solid rgba(154, 205, 50, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  max-width: 800px;
+  width: 100%;
+}
+
+.custom-button {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1 1 200px;
+  max-width: 250px;
+  justify-content: center;
+}
+
+.custom-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.primary-button {
+  background-color: rgba(154, 205, 50, 0.9);
+}
+
+.primary-button:hover {
+  background-color: rgba(154, 205, 50, 1);
+}
+
+.outline-button {
+  background-color: transparent;
+  border: 1px solid rgba(154, 205, 50, 0.9);
+}
+
+.outline-button:hover {
+  background-color: rgba(154, 205, 50, 0.1);
+}
+
+.linkedin-button {
+  background-color: #0077b5;
+  color: white;
+}
+
+.linkedin-button:hover {
+  background-color: #006396;
+}
+
+.button-icon {
+  margin-left: 0.5rem;
+  width: 18px;
+  height: 18px;
+}
+
+.about-section {
+  padding: 2rem;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: black;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  margin-bottom: 4rem;
+}
+
+.about-section:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-heading {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ... (previous styles remain the same) ... */
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.custom-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.custom-button .button-icon {
+  margin-right: 0.5rem;
+  width: 18px;
+  height: 18px;
+}
+
+.primary-button {
+  background-color: rgba(154, 205, 50, 1);
+}
+
+.primary-button:hover {
+  background-color: rgba(154, 205, 50, 0.9);
+}
+
+.secondary-button {
+  background-color: #4a4a4a;
+}
+
+.secondary-button:hover {
+  background-color: #3a3a3a;
+}
+
+.github-button {
+  background-color: #24292e;
+}
+
+.github-button:hover {
+  background-color: #1a1e22;
+}
+
+.linkedin-button {
+  background-color: #0077b5;
+}
+
+.linkedin-button:hover {
+  background-color: #006396;
+}
+
+/* ... (rest of the styles remain the same) ... */
+
+@media (max-width: 768px) {
+  .button-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* ... (other media query styles remain the same) ... */
+}
+
+@media (max-width: 480px) {
+  .button-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ... (any remaining styles) ... */
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    margin-top: 2rem;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-button {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .about-section {
+    padding: 1.5rem 1rem;
+    margin: 0 1rem 2rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .button-container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
