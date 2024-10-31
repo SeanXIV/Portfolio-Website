@@ -19,6 +19,11 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// Test endpoint
+app.get('/api/test', (req, res) => {
+  res.send('Backend is working!');
+});
+
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
   try {
