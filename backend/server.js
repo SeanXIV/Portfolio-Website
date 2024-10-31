@@ -1,7 +1,7 @@
 // server.js
 const express = require('express');
 const cors = require('cors');
-const sgMail = require('@sendgrid/mail');
+const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const app = express();
@@ -10,17 +10,23 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Set SendGrid API Key
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+// Set up Nodemailer transporter
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER, // Your Gmail address
+    pass: process.env.GMAIL_APP_PASSWORD, // App password from Gmail
+  },
+});
 
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
   try {
     const { firstName, lastName, email, contactReason } = req.body;
 
-    const msg = {
-      to: 'andrewseanego14@gmail.com', // Your email
-      from: process.env.SENDGRID_VERIFIED_SENDER, // Your verified SendGrid sender
+    const mailOptions = {
+      from: email, // The email of the person contacting you
+      to: process.env.GMAIL_USER, // Your Gmail address
       subject: 'New Contact Form Submission',
       text: `
         New contact form submission:
@@ -37,7 +43,7 @@ app.post('/api/contact', async (req, res) => {
       `,
     };
 
-    await sgMail.send(msg);
+    await transporter.sendMail(mailOptions);
     res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
     console.error('Error sending email:', error);
