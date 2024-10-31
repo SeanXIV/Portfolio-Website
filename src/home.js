@@ -30,7 +30,7 @@ export default function Home() {
             </Button>
             <Button 
               className="secondary-button"
-              onClick={() => window.open('https://drive.google.com/file/d/1H4r7_z9xIoTJaAIae-1pWCoJUWavQAsH/view?usp=sharing', '_blank')}
+              onClick={() => window.open('https://drive.google.com/file/d/1bvAYSA4XCeuTN2kaXhjA27mVZ2ZHtMrI/view?usp=sharing', '_blank')}
               icon={FileText}
             >
               View CV
