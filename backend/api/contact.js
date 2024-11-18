@@ -1,37 +1,49 @@
-// server.js
-const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-const app = express();
-
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-// Set up Nodemailer transporter
+// Initialize transporter outside of the handler
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.GMAIL_USER, // Your Gmail address
-    pass: process.env.GMAIL_APP_PASSWORD, // App password from Gmail
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
   },
 });
 
-// Test endpoint
-app.get('/api/test', (req, res) => {
-  res.send('Backend is working!');
+// Middleware to handle CORS
+const corsMiddleware = cors({
+  origin: process.env.ALLOWED_ORIGIN || '*', // Replace with your frontend URL
+  methods: ['POST', 'OPTIONS'],
 });
 
-// Contact form endpoint
-app.post('/api/contact', async (req, res) => {
+// Helper function to run middleware
+const runMiddleware = (req, res, fn) => {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+};
+
+export default async function handler(req, res) {
+  // Handle CORS
+  await runMiddleware(req, res, corsMiddleware);
+
+  // Only allow POST method
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method not allowed' });
+  }
+
   try {
     const { firstName, lastName, email, contactReason } = req.body;
 
     const mailOptions = {
-      from: email, // The email of the person contacting you
-      to: process.env.GMAIL_USER, // Your Gmail address
+      from: email,
+      to: process.env.GMAIL_USER,
       subject: 'New Contact Form Submission',
       text: `
         New contact form submission:
@@ -54,9 +66,4 @@ app.post('/api/contact', async (req, res) => {
     console.error('Error sending email:', error);
     res.status(500).json({ message: 'Error sending email' });
   }
-});
-
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+}
