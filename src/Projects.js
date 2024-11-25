@@ -1,5 +1,6 @@
 import React from 'react';
-import { GithubIcon } from 'lucide-react';
+import { GithubIcon, ExternalLinkIcon } from 'lucide-react'; // Import ExternalLinkIcon or any other icon you prefer
+import toDoListImage from './assets/images/to-do-list.png';
 import wasteSortImage from './assets/images/waste-sorting.jpg';
 import weatherImage from './assets/images/weather.jpeg';
 import './Projects.css';
@@ -7,8 +8,16 @@ import './Projects.css';
 const Projects = () => {
     const projects = [
         {
+            title: "To Do List App",
+            tags: ["JavaScript", "MERN Stack"],
+            image: toDoListImage,
+            description: "I worked as a fullstack developer to build a to-do list app which allows users to efficiently manage their tasks with a sleek and modern user interface.",
+            githubLink: "https://github.com/SeanXIV/To-Do-List-App",
+            liveLink: "https://to-do-list-app-frontend-tau.vercel.app/"
+        },
+        {
             title: "Waste Sorting API",
-            tags: ["Java"],
+            tags: ["Java", "Spring Boot"],
             image: wasteSortImage,
             description: "I worked as a backend developer to build a restful api that is user-friendly and that empowers users to make environmentally conscious decisions about waste disposal.",
             githubLink: "https://github.com/SeanXIV/Waste-sorting-api"
@@ -62,6 +71,18 @@ const Projects = () => {
                                 <GithubIcon size={20} />
                                 View on GitHub
                             </a>
+
+                            {project.liveLink && (
+                                <a 
+                                    href={project.liveLink} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="live-button"
+                                >
+                                    <ExternalLinkIcon size={20} />
+                                    View Live
+                                </a>
+                            )}
                         </div>
                     </div>
                 ))}

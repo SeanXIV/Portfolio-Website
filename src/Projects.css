@@ -129,6 +129,33 @@
     transform: translateY(-3px);
 }
 
+.live-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: yellowgreen;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%; /* Make it full width for consistency with GitHub button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.live-button:hover {
+    background-color: limegreen;
+    transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+.live-button svg {
+    margin-right: 0.5rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .projects-container {
