@@ -20,10 +20,11 @@
 /* Projects grid layout */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+    gap: 2rem; /* Space between the cards */
     padding: 0 1rem;
 }
+
 
 /* Project card with glass effect */
 .project-card {
@@ -158,16 +159,7 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .projects-container {
-        padding: 1.5rem;
-    }
-
     .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .project-card-content {
-        padding: 1rem;
+        grid-template-columns: 1fr; /* One column for smaller screens */
     }
 }

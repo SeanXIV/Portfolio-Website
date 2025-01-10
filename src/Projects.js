@@ -1,8 +1,9 @@
 import React from 'react';
 import { GithubIcon, ExternalLinkIcon } from 'lucide-react'; // Import ExternalLinkIcon or any other icon you prefer
 import toDoListImage from './assets/images/to-do-list.png';
-import wasteSortImage from './assets/images/waste-sorting.jpg';
+import orderProcessImage from './assets/images/Order-Processing-System.png';
 import weatherImage from './assets/images/weather.jpeg';
+import employeeManagerImage from './assets/images/Employee-management.png';
 import './Projects.css';
 
 const Projects = () => {
@@ -16,11 +17,18 @@ const Projects = () => {
             liveLink: "https://to-do-list-app-frontend-tau.vercel.app/"
         },
         {
-            title: "Waste Sorting API",
-            tags: ["Java", "Spring Boot"],
-            image: wasteSortImage,
-            description: "I worked as a backend developer to build a restful api that is user-friendly and that empowers users to make environmentally conscious decisions about waste disposal.",
-            githubLink: "https://github.com/SeanXIV/Waste-sorting-api"
+            title: "Order Processing API",
+            tags: ["Java", "Spring Boot", "PostgreSQL"],
+            image: orderProcessImage,
+            description: "I worked as a backend developer to build a restful api for processing orders in an e-commerce application. This includes order creation, updating order status, and retrieving order history.",
+            githubLink: "https://github.com/SeanXIV/Order-Processing-API"
+        },
+        {
+            title: "Employee Manager API",
+            tags: ["Java", "Spring Boot", "PostgreSQL"],
+            image: employeeManagerImage,
+            description: "I worked as a backend developer to build an API that manages employee records including adding, updating, deleting, and retrieving employee information.",
+            githubLink: "https://github.com/SeanXIV/Employee-Management-API"
         },
         {
             title: "Weather Application",
